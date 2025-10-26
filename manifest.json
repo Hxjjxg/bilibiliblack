@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "访问bilibili拉黑你的人主页",
+  "version": "1.14514",
+  "description": "拦截 B 站 relation API 响应，把 attribute 改为 0",
+  "host_permissions": [
+    "https://space.bilibili.com/*",
+    "https://api.bilibili.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://space.bilibili.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page.js"],
+      "matches": ["https://space.bilibili.com/*"]
+    }
+  ]
+}
